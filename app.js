@@ -286,7 +286,7 @@ function drawSelectionUI() {
 }
 function render() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.fillStyle = '#1E1E1E';
+  ctx.fillStyle = '#181C1A';
   ctx.fillRect(0, 0, cssW, cssH);
   ctx.translate(vp.x, vp.y);
   ctx.scale(vp.scale, vp.scale);
