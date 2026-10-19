@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Figma</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <header id="topbar">
+    <div class="logo">✦ Mini Figma</div>
+    <div class="doc">design.mini</div>
+    <div class="sep"></div>
+    <button id="undoBtn" class="tbtn" title="Отменить (Ctrl+Z)">↶</button>
+    <button id="redoBtn" class="tbtn" title="Вернуть (Ctrl+Shift+Z)">↷</button>
+    <div class="grow"></div>
+    <button id="zoomOutBtn" class="tbtn" title="Отдалить">−</button>
+    <span id="zoomLabel">100%</span>
+    <button id="zoomInBtn" class="tbtn" title="Приблизить">+</button>
+    <button id="fitBtn" class="tbtn wide" title="Вписать холст в экран (Ctrl+0)">Вписать</button>
+    <button id="exportBtn" class="primary" title="Экспорт холста в PNG">⬇ PNG</button>
+  </header>
+
+  <div id="main">
+
+    <nav id="toolbar">
+      <button class="tool active" data-tool="select" title="Выделение (V)">
+        <svg viewBox="0 0 24 24"><path d="M6 3 L18 12 L11.5 13.5 L9 20 Z" fill="currentColor" stroke="none"/></svg>
+      </button>
+      <button class="tool" data-tool="rect" title="Прямоугольник (R)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/></svg>
+      </button>
+      <button class="tool" data-tool="ellipse" title="Эллипс (O)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="8.5" ry="6.5"/></svg>
+      </button>
+      <button class="tool" data-tool="line" title="Линия (L)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="19" x2="19" y2="5"/></svg>
+      </button>
+      <button class="tool" data-tool="text" title="Текст (T)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 6h14M12 6v13"/></svg>
+      </button>
+    </nav>
+
+    <div id="stage">
+      <canvas id="canvas"></canvas>
+      <textarea id="textEditor" spellcheck="false"></textarea>
+      <div id="hint"></div>
+    </div>
+
+    <aside id="panel">
+      <section id="layers">
+        <h2>Слои</h2>
+        <ul id="layerList"></ul>
+      </section>
+
+      <section id="props">
+        <h2>Свойства</h2>
+        <div id="emptyMsg">Ничего не выбрано</div>
+        <div id="fields">
+          <div class="row two">
+            <label>X<input id="px" type="number" step="1"></label>
+            <label>Y<input id="py" type="number" step="1"></label>
+          </div>
+          <div class="row two">
+            <label>Ширина<input id="pw" type="number" min="1" step="1"></label>
+            <label>Высота<input id="ph" type="number" min="1" step="1"></label>
+          </div>
+
+          <div class="row">
+            <span class="cap">Заливка</span>
+            <button id="fillChk" class="swatch-toggle" title="Включить/выключить заливку"></button>
+            <input id="fillColor" type="color">
+            <input id="fillHex" class="hex" spellcheck="false" title="HEX-код">
+          </div>
+
+          <div class="row">
+            <span class="cap">Обводка</span>
+            <button id="strokeChk" class="swatch-toggle" title="Включить/выключить обводку"></button>
+            <input id="strokeColor" type="color">
+            <input id="strokeHex" class="hex" spellcheck="false" title="HEX-код">
+            <input id="strokeWidth" type="number" min="0" max="100" step="1" title="Толщина обводки" class="narrow">
+          </div>
+
+          <div class="row">
+            <span class="cap">Прозр.</span>
+            <input id="opacity" type="range" min="0" max="100" step="1">
+            <span id="opacityOut">100%</span>
+          </div>
+
+          <div class="row" id="radiusRow">
+            <span class="cap">Скругл.</span>
+            <input id="radius" type="number" min="0" max="500" step="1">
+          </div>
+
+          <div id="textRow">
+            <div class="row">
+              <span class="cap">Кегль</span>
+              <input id="textSize" type="number" min="4" max="400" step="1">
+            </div>
+            <textarea id="textContent" placeholder="Текст…" spellcheck="false"></textarea>
+          </div>
+
+          <div class="row btns">
+            <button id="dupBtn" title="Дублировать (Ctrl+D)">Дублировать</button>
+            <button id="delBtn" class="danger" title="Удалить (Delete)">Удалить</button>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+  </div>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
