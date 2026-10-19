@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>imia — учусь веб-разработке</title>
+<style>
+  :root {
+    --text: #111111;
+    --muted: #5c5c5c;
+    --accent: #0f6b52;
+    --line: #e2e2df;
+    --bg: #fbfbfa;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 64px 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  main {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+  }
+
+  .role {
+    margin: 0 0 32px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 0 20px;
+    color: var(--muted);
+  }
+
+  p strong { color: var(--text); font-weight: 600; }
+
+  hr {
+    height: 1px;
+    margin: 36px 0;
+    border: 0;
+    background: var(--line);
+  }
+
+  footer {
+    font-size: 14px;
+    color: #8a8a86;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Привет, я imia</h1>
+    <p class="role">Учусь веб-разработке</p>
+
+    <p>
+      Я только начинаю путь во фронтенде и сейчас разбираюсь с основами:
+      <strong>HTML</strong> для структуры страницы, <strong>CSS</strong> для оформления
+      и <strong>JavaScript</strong> для интерактивности. Каждую тему стараюсь
+      закреплять практикой — вот эта страница как раз одна из первых работ.
+    </p>
+
+    <p>
+      Мне нравится, что результат виден сразу: поменял пару строк кода — и страница
+      в браузере уже выглядит иначе. Дальше в планах вёрстка по макетам, адаптивная
+      вёрстка под мобильные экраны и первый проект на JavaScript.
+    </p>
+
+    <hr>
+
+    <footer>Сделано вручную: один файл, никаких сборщиков и фреймворков.</footer>
+  </main>
+</body>
+</html>
